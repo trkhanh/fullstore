@@ -42,3 +42,6 @@ exports = module.exports = function (app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 };
+///fvfvsfsfvvf
+//wvwvfvfvsfvsfv
+//vinh pro vl
