@@ -21,7 +21,7 @@ keystone.init({
 	'mongo': 'mongodb://admin:bFZWuv5pM2QmdZQC@cluster0-shard-00-00-oogxe.mongodb.net:27017,cluster0-shard-00-01-oogxe.mongodb.net:27017,cluster0-shard-00-02-oogxe.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',
 	'emails': 'templates/emails',
 	'cloudinary config': 'cloudinary://388629431712445:3weV7eNgMz2OUlzwD4mbRrzq7Dg@dnxhsinfi',
-
+	'cookie secret':'abcdf', //TODO: this thing need to change for production env
 	'auto update': true,
 	'session': true,
 	'auth': true,
