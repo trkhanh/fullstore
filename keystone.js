@@ -20,7 +20,8 @@ keystone.init({
 	'view engine': 'pug',
 	'mongo': 'mongodb://admin:bFZWuv5pM2QmdZQC@cluster0-shard-00-00-oogxe.mongodb.net:27017,cluster0-shard-00-01-oogxe.mongodb.net:27017,cluster0-shard-00-02-oogxe.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',
 	'emails': 'templates/emails',
-
+	'cloudinary config': 'cloudinary://388629431712445:3weV7eNgMz2OUlzwD4mbRrzq7Dg@dnxhsinfi',
+	'cookie secret':'abcdf', //TODO: this thing need to change for production env
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -50,19 +51,21 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 });
-
+// Configure the Cloudinary Update
+keystone.set('cloudinary config', { cloud_name: 'dnxhsinfi', api_key: '388629431712445', api_secret: '3weV7eNgMz2OUlzwD4mbRrzq7Dg' });
 // Start Keystone to connect to your database and initialise the web server
 
+//TODO: Ka will config mail sever later
 
-if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
-	console.log('----------------------------------------'
-	+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
-	+ '\n----------------------------------------'
-	+ '\nYou have opted into email sending but have not provided'
-	+ '\nmailgun credentials. Attempts to send will fail.'
-	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
-	+ '\nset up your mailgun integration');
-}
+// if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
+// 	console.log('----------------------------------------'
+// 	+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
+// 	+ '\n----------------------------------------'
+// 	+ '\nYou have opted into email sending but have not provided'
+// 	+ '\nmailgun credentials. Attempts to send will fail.'
+// 	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
+// 	+ '\nset up your mailgun integration');
+// }
 
 
 keystone.start();
