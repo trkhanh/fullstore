@@ -13,3 +13,11 @@ To access the configuration variables in our application, we can use them as:
     1 var madrillApiKey = process.env.MANDRILL_API_KEY;
 
 #  WARNING : !!!! Don't Ignore CONFIG .env
+
+# The default admin is created with the below code that is stored at /updates/0.0.1-admins.js with the following credentials: (email - user@keystonejs.com | password - admin)
+    1 exports.create = {
+    2 	User: [
+    3 		{ 'name.first': 'Admin', 'name.last': 'User', email: 'user@keystonejs.com',
+    4 		password: 'admin', isAdmin: true }
+    5 	]
+    6 };
