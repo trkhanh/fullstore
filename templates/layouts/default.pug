@@ -11,7 +11,7 @@ html
 
 		title= title || 'fullstore'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
-
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
 
@@ -43,10 +43,10 @@ html
 
 			//- Header 1
 			div.row.header-tools-top
-				.col-lg-6
+				.col-md-6
 					p.head-left
 						a(href='#') UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY 
-				.col-lg-6
+				.col-md-6
 					ul.head-right
 						li.dropdown.head-dpdn
 							a.dropdown-toggle(href='#', data-toggle='dropdown')
@@ -103,19 +103,19 @@ html
 			//- Header 2
 			.row.header-two
 				.container
-					.col-lg-3
+					.col-md-3
 						.header-logo
 							h1
 								a(href='index.html')
 									span Khánh Huyền 
 							h6 Mẹ mua sắm,bé nhận quà.
-					.col-lg-6
+					.col-md-6
 						.header-search
 							form(action='#', method='post')
 								input(type='search', name='Search', placeholder='Tìm kiếm sản phẩm...', required='')
 								button.btn.btn-default(type='submit', aria-label='Left Align')
 									i.glyphicon.glyphicon-search(aria-hidden='true')  
-					.col-lg-3
+					.col-md-3
 						.header-cart
 							.my-account
 								a(href='contact.html')
@@ -199,19 +199,102 @@ html
 						.clearfix  
 			//- Footer keep in touch
 			row
-			.container
-					.col-lg-6
-					.col-lg-6
+				.subscribe
+					.container
+						.col-md-6.social-icons
+							h4 Keep in touch
+							ul
+								li 
+									a.fa.fa-facebook.icon.facebook.fa-3x(href='#')  
+								li
+									a.fa.fa-twitter.icon.twitter.fa-3x(href='#')  
+								li
+									a.fa.fa-google-plus.icon.googleplus.fa-3x(href='#')  
+								li
+									a.fa.fa-dribbble.icon.dribbble.fa-3x(href='#')  
+								li
+									a.fa.fa-rss.icon.rss.fa-3x(href='#')  
+						.col-md-6
+								h4 Sign up for email and get 25%off!
+						form(action='#', method='post')
+							input(type='text', name='email', placeholder='Enter your Email...', required='')
+							input(type='submit', value='Subscribe')
 			//- Footer main
 			row
-				.container
-					.col-lg-3
-					.col-lg-3
-					.col-lg-3
-					.col-lg-3
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
-
+				.main-footer
+					.container
+						.footer-info
+						.col-md-4.address-left
+							.footer-logo.header-logo
+							h2
+								a(href='index.html')
+									span S
+									| mart 
+									i Bazaar
+							h6 Your stores. Your place.
+							ul
+								li
+									i.fa.fa-map-marker
+									|  123 San Sebastian, New York City USA.
+								li
+									i.fa.fa-mobile
+									|  333 222 3333
+								li
+									i.fa.fa-phone
+									|  +222 11 4444
+								li
+									i.fa.fa-envelope-o
+									a(href='mailto:example@mail.com')  mail@example.com
+						.col-md-8.address-right
+							.col-md-4.footer-grids
+								h3 Company
+								ul
+									li
+										a(href='about.html') About Us
+									li
+										a(href='marketplace.html') Marketplace
+									li
+										a(href='values.html') Core Values
+									li
+										a(href='privacy.html') Privacy Policy
+							.col-md-4.footer-grids
+								h3 Services
+								ul
+									li
+										a(href='contact.html') Contact Us
+									li
+										a(href='login.html') Returns
+									li
+										a(href='faq.html') FAQ
+									li
+										a(href='sitemap.html') Site Map
+									li
+										a(href='login.html') Order Status
+							.col-md-4.footer-grids
+								h3 Payment Methods
+								ul
+									li
+										i.fa.fa-laptop(aria-hidden='true')
+										|  Net Banking
+									li
+										i.fa.fa-money(aria-hidden='true')
+										|  Cash On Delivery
+									li
+										i.fa.fa-pie-chart(aria-hidden='true')
+										| EMI Conversion
+									li
+										i.fa.fa-gift(aria-hidden='true')
+										|  E-Gift Voucher
+									li
+										i.fa.fa-credit-card(aria-hidden='true')
+										|  Debit/Credit Card
+						.clearfix
+			row
+				.copy-right
+					.container
+						p
+							| © 2017 Khanh Huyen Store . All rights reserved | Design by 
+							a(href='https://www.linkedin.com/in/tran-khanh91/')  KhanhTran.
 
 		//- JAVASCRIPT
 
