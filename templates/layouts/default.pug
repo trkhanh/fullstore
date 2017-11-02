@@ -36,31 +36,121 @@ html
 	body
 
 		//- HEADER
-		#header: .container
+		#header: .container-fluid
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') fullstore
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+			//- Header 1
+			div.row.header-tools-top
+				.col-lg-6
+					p.head-left
+						a(href='#') UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY 
+				.col-lg-6
+					ul.head-right
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='#', data-toggle='dropdown')
+								i.glyphicon.glyphicon-user(aria-hidden='true')
+								|  My Account
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='login.html') Login 
+								li
+									a(href='signup.html') Sign Up
+								li
+									a(href='login.html') My Orders
+								li
+									a(href='login.html') Wallet
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='#', data-toggle='dropdown')
+								i.glyphicon.glyphicon-tags(aria-hidden='true')
+								|  Today's Deals
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='offers.html') Cash Back Offers
+								li
+									a(href='offers.html') Product Discounts
+								li
+									a(href='offers.html') Special Offers
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='#', data-toggle='dropdown')
+								i.glyphicon.glyphicon-gift(aria-hidden='true')
+								|  Gift Cards
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='offers.html') Product Gift card
+								li
+									a(href='offers.html') Occasions Register
+								li
+									a(href='offers.html') View Balance
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='contact.html')
+								i.glyphicon.glyphicon-map-marker(aria-hidden='true')
+								|  Store Finder
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='card.html')
+								i.glyphicon.glyphicon-credit-card(aria-hidden='true')
+								|  Credit Card
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='help.html')
+								i.glyphicon.glyphicon-question-sign(aria-hidden='true')
+								|  Help
+					.clearfix
+			
+			//- Header 2
+			.row.header-two
+				.container
+					.col-lg-3
+						.header-logo
+							h1
+								a(href='index.html')
+									span Khánh Huyền 
+							h6 Mẹ mua sắm,bé nhận quà.
+					.col-lg-6
+						.header-search
+							form(action='#', method='post')
+								input(type='search', name='Search', placeholder='Tìm kiếm sản phẩm...', required='')
+								button.btn.btn-default(type='submit', aria-label='Left Align')
+									i.glyphicon.glyphicon-search(aria-hidden='true')  
+					.col-lg-3
+						.header-cart
+							.my-account
+								a(href='contact.html')
+									i.glyphicon.glyphicon-map-marker(aria-hidden='true')
+									|  CONTACT US
+							.cart
+								form.last(action='#', method='post')
+									input(type='hidden', name='cmd', value='_cart')
+									input(type='hidden', name='display', value='1')
+									button.w3view-cart(type='submit', name='submit', value='')
+										i.glyphicon.glyphicon-shopping-cart(aria-hidden='true')
+							.clearfix  
+						.clearfix  
+			
+			div.row
+				div(role="navigation").navbar.navbar-default
+					.container-fluid
+						.navbar-header
+							button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+								span.sr-only Toggle navigation
+								span.icon-bar
+								span.icon-bar
+								span.icon-bar
+							a.navbar-brand(href='/') fullstore
+						.collapse.navbar-collapse
+							ul.nav.navbar-nav.navbar-left
+								each link in navLinks
+									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+							ul.nav.navbar-nav.navbar-right
+								if user
+									if user.canAccessKeystone
+										li: a(href='/keystone') Open Keystone
+									li: a(href='/keystone/signout') Sign Out
+								else
+									li: a(href='/keystone/signin') Sign In
 
 		//- BODY
 		#body
@@ -81,8 +171,44 @@ html
 
 
 		//- FOOTER
-		.container: #footer
-
+		#footer
+			//- Footer free delivery customer care good quality
+			row
+				.footer-top
+					.container
+						.col-md-4
+							.ftr-top-left
+								i.glyphicon.glyphicon-piggy-bank(aria-hidden='true')
+							.ftr-top-right
+								h4 TIẾT KIỆM
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac 
+							.clearfix  
+						.col-md-4
+							.ftr-top-left
+								i.glyphicon.glyphicon-user(aria-hidden='true')
+							.ftr-top-right
+								h4 UY TÍN
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac 
+							.clearfix  
+						.col-md-4
+							.ftr-top-left
+								i.glyphicon.glyphicon-thumbs-up(aria-hidden='true')
+							.ftr-top-right
+								h4 DỊCH VỤ CHẤT LƯỢNG
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac 
+						.clearfix  
+			//- Footer keep in touch
+			row
+			.container
+					.col-lg-6
+					.col-lg-6
+			//- Footer main
+			row
+				.container
+					.col-lg-3
+					.col-lg-3
+					.col-lg-3
+					.col-lg-3
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
 			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
