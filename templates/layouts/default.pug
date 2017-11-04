@@ -42,7 +42,7 @@ html
 			//- ... or completely change this header to suit your design.
 
 			//- Header 1
-			div.row.header-tools-top
+			div.row.header-tools-top.visible-lg-block.hidden-sm
 				.col-md-6
 					p.head-left
 						a(href='#') UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY 
@@ -54,8 +54,12 @@ html
 								|  My Account
 								span.caret
 							ul.dropdown-menu
-								li
-									a(href='login.html') Login 
+								if user
+									if user.canAccessKeystone
+										li: a(href='/keystone') Open Keystone
+									li: a(href='/keystone/signout') Sign Out
+								else
+									li: a(href='/keystone/signin') Sign In
 								li
 									a(href='signup.html') Sign Up
 								li
@@ -91,24 +95,19 @@ html
 								i.glyphicon.glyphicon-map-marker(aria-hidden='true')
 								|  Store Finder
 						li.dropdown.head-dpdn
-							a.dropdown-toggle(href='card.html')
-								i.glyphicon.glyphicon-credit-card(aria-hidden='true')
-								|  Credit Card
-						li.dropdown.head-dpdn
 							a.dropdown-toggle(href='help.html')
 								i.glyphicon.glyphicon-question-sign(aria-hidden='true')
 								|  Help
 					.clearfix
 			
 			//- Header 2
-			.row.header-two
+			.row.header-two.visible-lg-block.hidden-sm
 				.container
 					.col-md-3
 						.header-logo
-							h1
-								a(href='index.html')
-									span Khánh Huyền 
-							h6 Mẹ mua sắm,bé nhận quà.
+							a(href='index.html')
+								img(src='../images/icon.png', alt='Khanh Huyen') 
+							h6 Chuyên kinh doanh mặt hàng sữa.
 					.col-md-6
 						.header-search
 							form(action='#', method='post')
@@ -130,27 +129,45 @@ html
 							.clearfix  
 						.clearfix  
 			
-			div.row
+			.row.header-three
 				div(role="navigation").navbar.navbar-default
-					.container-fluid
+					.container
 						.navbar-header
 							button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
 								span.sr-only Toggle navigation
 								span.icon-bar
 								span.icon-bar
 								span.icon-bar
-							a.navbar-brand(href='/') fullstore
+							.visible-xs-block.hidden-lg
+								a.navbar-brand(href='/') Khanh Huyen
 						.collapse.navbar-collapse
 							ul.nav.navbar-nav.navbar-left
+								li.dropdown.nav-list
+									a.fa.fa-th-large.fa-1x(data-toggle='dropdown',aria-hidden='true')
+										span.product-pan Danh sách sản phẩm
+									ul.dropdown-menu.product-dropdown
+										li
+											a(href='login.html') Điện Thoại
+										li
+											a(href='signup.html') Máy Lạnh
+										li
+											a(href='login.html') Tủ giặt
+										li
+											a(href='login.html') Tủ giặt
+										li
+											a(href='login.html') Tủ giặt
+										li
+											a(href='login.html') Tủ giặt
+										li
+											a(href='login.html') Tủ giặt
+										li
+											a(href='login.html') Tủ giặt
+										li
+											a(href='login.html') Tủ giặt
 								each link in navLinks
 									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 							ul.nav.navbar-nav.navbar-right
-								if user
-									if user.canAccessKeystone
-										li: a(href='/keystone') Open Keystone
-									li: a(href='/keystone/signout') Sign Out
-								else
-									li: a(href='/keystone/signin') Sign In
+								
 
 		//- BODY
 		#body
@@ -202,7 +219,7 @@ html
 				.subscribe
 					.container
 						.col-md-6.social-icons
-							h4 Keep in touch
+							h4 Liên kết mạng xã hội
 							ul
 								li 
 									a.fa.fa-facebook.icon.facebook.fa-3x(href='#')  
@@ -214,11 +231,11 @@ html
 									a.fa.fa-dribbble.icon.dribbble.fa-3x(href='#')  
 								li
 									a.fa.fa-rss.icon.rss.fa-3x(href='#')  
-						.col-md-6
-								h4 Sign up for email and get 25%off!
-						form(action='#', method='post')
-							input(type='text', name='email', placeholder='Enter your Email...', required='')
-							input(type='submit', value='Subscribe')
+						.col-md-6.visible-lg-block.hidden-sm
+								h4 Đăng kí để nhận voucher giảm 25%!
+								form(action='#', method='post')
+									input(type='text', name='email', placeholder='Enter your Email...', required='')
+									input(type='submit', value='Subscribe')
 			//- Footer main
 			row
 				.main-footer
@@ -226,52 +243,48 @@ html
 						.footer-info
 						.col-md-4.address-left
 							.footer-logo.header-logo
-							h2
-								a(href='index.html')
-									span S
-									| mart 
-									i Bazaar
-							h6 Your stores. Your place.
-							ul
+								.header-logo
+									a(href='index.html')
+										img(src='../images/icon.png', alt='Khanh Huyen') 
+									h6 Chuyên kinh doanh mặt hàng sữa.
+							ul.cheat-footer
 								li
 									i.fa.fa-map-marker
-									|  123 San Sebastian, New York City USA.
+									|  11.14 Tầng 11, Lô A, Chung cư Khang Gia P 14, Quận Gò Vấp, HCM
 								li
 									i.fa.fa-mobile
-									|  333 222 3333
+									|  0901.787.179 
 								li
 									i.fa.fa-phone
-									|  +222 11 4444
+									|  08.666.008.64
 								li
 									i.fa.fa-envelope-o
-									a(href='mailto:example@mail.com')  mail@example.com
-						.col-md-8.address-right
+									a(href='mailto:example@mail.com')  khanhsg2008@gmail.com
+						.col-md-8.address-right.visible-lg-block.hidden-sm
 							.col-md-4.footer-grids
-								h3 Company
+								h3 Cửa Hàng
 								ul
 									li
-										a(href='about.html') About Us
+										a(href='about.html') Về Chúng Tôi
 									li
-										a(href='marketplace.html') Marketplace
+										a(href='marketplace.html') Thị Trường
 									li
-										a(href='values.html') Core Values
+										a(href='values.html') Nhân Sự
 									li
-										a(href='privacy.html') Privacy Policy
+										a(href='privacy.html') Chính Sách
 							.col-md-4.footer-grids
-								h3 Services
+								h3 Dịch Vụ
 								ul
 									li
-										a(href='contact.html') Contact Us
+										a(href='contact.html') Liên Lạc
 									li
-										a(href='login.html') Returns
-									li
-										a(href='faq.html') FAQ
+										a(href='login.html') Đổi Trả
 									li
 										a(href='sitemap.html') Site Map
 									li
-										a(href='login.html') Order Status
+										a(href='login.html') Đơn Hàng
 							.col-md-4.footer-grids
-								h3 Payment Methods
+								h3 Thanh Toán
 								ul
 									li
 										i.fa.fa-laptop(aria-hidden='true')
