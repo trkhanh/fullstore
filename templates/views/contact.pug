@@ -1,34 +1,76 @@
 extends ../layouts/default
 
 block intro
-	.container
-		h1 Contact Us
-		
+	.row: .contact
+		.container
+			h3 Thông tin liên hệ
+			.map-info
+				h4 Vị trí cửa hàng
+				iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555')
 block content
 	.container
 		if enquirySubmitted
 			h3 Thanks for getting in touch.
 		else
-			.row: .col-sm-8.col-md-6
-				form(method='post')
-					input(type='hidden', name='action', value='contact')
-					.form-group(class=validationErrors.name ? 'has-error' : null)
-						label Name
-						input(type='text', name='name.full', value=formData['name.full']).form-control
-					.form-group(class=validationErrors.email ? 'has-error' : null)
-						label Email
-						input(type='email', name='email', value=formData.email).form-control
-					.form-group
-						label Phone
-						input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
-					.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
-						label What are you contacting us about?
-						select(name='enquiryType').form-control
-							option(value='') (select one)
-							each type in enquiryTypes
-								option(value=type.value, selected=formData.enquiryType == type.value)= type.label
-					.form-group(class=validationErrors.message ? 'has-error' : null)
-						label Message
-						textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
-					.form-actions
-						button(type='submit').btn.btn-primary Send
+			.row 
+				.col-md-offset-4
+					h3.contact-drop-us Drop Us a line
+				.col-md-7.contact-left
+					form(method='post')
+						input(type='hidden', name='action', value='contact')
+						.row
+							.col-md-6
+								.form-group(class=validationErrors.name ? 'has-error' : null)
+									label Họ và Tên
+									input(type='text', name='name.full', value=formData['name.full']).form-control
+							.col-md-6
+								.form-group(class=validationErrors.email ? 'has-error' : null)
+									label Email:
+									input(type='email', name='email', value=formData.email).form-control
+						.row
+							.col-md-6
+								.form-group
+									label Số điện thoại
+									input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
+							.col-md-6
+								.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+									label Bạn muốn gửi đánh giá loại nào cho chúng tôi?
+									select(name='enquiryType').form-control
+										option(value='') Các câu hỏi..
+										each type in enquiryTypes
+											option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+						.row
+							.col-md-12
+								.form-group(class=validationErrors.message ? 'has-error' : null)
+									label Nội dung
+									textarea(name='message', placeholder='Bạn muốn nhắn gì cho chúng tôi...' rows=4).form-control= formData.message
+								.form-actions
+						button(type='submit').btn.btn-primary Gửi
+				.col-md-4.contact-right
+						.cnt-w3agile-row
+							.col-md-3.contact-w3icon
+								i.fa.fa-truck(aria-hidden='true')
+							.col-md-9.contact-w3text
+								p
+									| Chức năng quản lý linh hoạt
+									br
+									| Dễ dàng đặt hàng và đổi trả
+							.clearfix  
+						.cnt-w3agile-row.cnt-w3agile-row-mdl
+							.col-md-3.contact-w3icon
+								i.fa.fa-bell(aria-hidden='true')
+							.col-md-9.contact-w3text
+								p
+									| Chức năng thông báo  
+									br
+									| Nhận sản phẩm mới nhất & Lời khuyên từ chuyên gia
+							.clearfix  
+						.cnt-w3agile-row
+							.col-md-3.contact-w3icon
+								i.fa.fa-heart(aria-hidden='true')
+							.col-md-9.contact-w3text
+								p
+									| Chức năng tham gia bình chọn
+									br
+									|  Với những sản phẩm được yêu thích, kì vọng và đánh giá cao
+							.clearfix  

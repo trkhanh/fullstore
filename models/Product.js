@@ -22,8 +22,8 @@ Ticket.add({
 	assignedTo: {
 		type: Types.Relationship, ref: 'User', index: true, many: false,
 	},
-	createdAt: { type: Datetime, default: Date.now },
-	updatedAt: { type: Datetime, default: Date.now },
+	createdAt: { type: Date, default: Date.now },
+	updatedAt: { type: Date, default: Date.now },
 });
 
 Ticket.defaultSort = '-createdAt';

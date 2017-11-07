@@ -130,30 +130,7 @@ ul.cd-dropdown-content li {
     float: right;
 	margin: 1.3em 0;
 }  
-.header-logo h1,.footer-logo.header-logo h2{
-    font-size: 3em; 
-    font-weight: 900;
-}
-.header-logo h1 a ,.footer-logo.header-logo h2 a{
-    display: inline-block;
-    color: #000;
-    text-decoration: none;
-    position: relative;
-}
-.header-logo h1 a span,.footer-logo.header-logo h2 a span{
-    font-family: 'Lovers Quarrel', cursive;
-    font-size: 2em;
-    color:#F44336;
-    vertical-align: sub;
-	margin-right: 3px;
-}
-.header-logo h1 a i,.footer-logo.header-logo h2 a i{
-    display: block;
-    position: absolute;
-    bottom: 18%;
-    right: 2%;
-    font-size: 0.5em; 
-} 
+
 .header-logo h6 {
     font-size: 0.8em;
     color: #000;
