@@ -1,0 +1,2 @@
+The views directory contains our application views that respond to various routes. Each view may interact with multiple models to fetch data related to a request and render a template with the data.
+#View is Controller in MVC pattern
