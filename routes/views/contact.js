@@ -32,6 +32,8 @@ exports = module.exports = function (req, res) {
 			next();
 		});
 	});
+	// Load the category's Title
+	view.query('categories', keystone.list('Category').model.find());
 
 	view.render('contact');
 };

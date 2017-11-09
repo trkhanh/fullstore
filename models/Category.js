@@ -6,15 +6,20 @@ var Category = new keystone.List('Category', {
 });
 
 Category.add({
-	title: { type: String, initial: true, default: '', required: true },
-	description: { type: Types.Textarea },
+	title: { type: String, initial: true, default: '', required: true, unique: true },
+	description: { type: Types.Textarea, initial: true },
 	createdBy: {
-		type: Types.Relationship, ref: 'User', index: true, many: false,
+		type: Types.Relationship, ref: 'User', index: true, many: false, initial: true
 	},
-	createdAt: { type: Datetime, default: Date.now },
-	updatedAt: { type: Datetime, default: Date.now },
+	createdAt: { type: Types.Datetime, default: Date.now },
+	updatedAt: { type: Types.Datetime, default: Date.now },
+	orderNumber: { type: Number, default: 0, required: false }
 });
 
-Category.defaultSort = '-createdAt';
 
+/**
+ * Registration
+ */
+Category.defaultColumns = 'orderNumber, title, description, iscreatedByAdmin, createdAt, updatedAt';
+Category.defaultSort = '-createdAt';
 Category.register();

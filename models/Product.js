@@ -30,16 +30,30 @@ Product.add({
 	},
 	discountRate: {
 		type: Types.Select, options: [
+			{ value: '0', label: '0%' },
 			{ value: '5', label: '5%' },
 			{ value: '25', label: '25%' },
 			{ value: '50', label: '50%' },
 			{ value: '65', label: '65%' },
 			{ value: '75', label: '75%' },
-		]
+		],
+		default: { value: '0', label: '0%' }
 	},
 	createdAt: { type: Date, default: Date.now },
 	updatedAt: { type: Date, default: Date.now },
 });
+
+//TODO: Ka--> This is may be solution for appear ref column without ID: If not pls work around
+// Product.schema.methods.toCSV = function (callback) {
+// 	var product = this,
+// 		rtn = this.toJSON();
+
+// 	this.populate('title', function () {
+// 		rtn.title = product.title;
+// 		callback(null, rtn);
+// 	});
+// }
+
 
 Product.defaultSort = '-createdAt';
 Product.defaultColumns = 'title, state|20%, description, retailPrice|15%'

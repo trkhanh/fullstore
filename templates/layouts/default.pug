@@ -146,24 +146,13 @@ html
 									a.fa.fa-th-large.fa-1x(data-toggle='dropdown',aria-hidden='true')
 										span.product-pan Danh sách sản phẩm
 									ul.dropdown-menu.product-dropdown
-										li
-											a(href='login.html') Điện Thoại
-										li
-											a(href='signup.html') Máy Lạnh
-										li
-											a(href='login.html') Tủ giặt
-										li
-											a(href='login.html') Tủ giặt
-										li
-											a(href='login.html') Tủ giặt
-										li
-											a(href='login.html') Tủ giặt
-										li
-											a(href='login.html') Tủ giặt
-										li
-											a(href='login.html') Tủ giặt
-										li
-											a(href='login.html') Tủ giặt
+										if categories?categories.length:false
+											each category in categories
+												li
+													a(href='/products/')= category.title
+										else
+											li
+												a(href='login.html') Không có sản phẩm nào để hiển thị 
 								each link in navLinks
 									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 							ul.nav.navbar-nav.navbar-right

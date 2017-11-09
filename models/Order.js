@@ -9,8 +9,8 @@ var Order = new keystone.List('Order', {
 
 Order.add({
     name: { type: Types.Name, required: true },
-    phone: { type: Types.String, required: true },
-    email: { type: Type.Email, required: true },
+    phone: { type: String, required: true },
+    email: { type: Types.Email, required: true },
     address: { type: String, required: true },
     products: { type: Types.Relationship, ref: 'Product', many: true, index: true, required: true, initial: true },
 });

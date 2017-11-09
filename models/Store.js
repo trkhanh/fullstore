@@ -8,7 +8,8 @@ var Types = keystone.Field.Types;
 var Store = new keystone.List('Store');
 
 Store.add({
-    phone: { type: Types.Name },
+    key: { type: String, require: true, unique: true },
+    phone: { type: String },
     address: { type: String },
     location: { type: Types.Location, defaults: { country: 'VietNam' } },
     mobile: { type: String },

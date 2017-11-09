@@ -11,11 +11,10 @@ var Carousel = new keystone.List('Carousel', {
 });
 
 Carousel.add({
-    key: { type: Types.key },
-    name: { type: String, required: true },
-    publishedDate: { type: Date, default: Date.now, required: true },
-    image: { type: Types.CloudinaryImages, required: true },
-    content: { type: String, required: true }
+    name: { type: String, required: true, initial: false, unique: true },
+    publishedDate: { type: Date, default: Date.now },
+    image: { type: Types.CloudinaryImages},
+    content: { type: String}
 });
 
 Carousel.register();

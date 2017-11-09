@@ -9,6 +9,10 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
+
+	// Load the category's Title
+	view.query('categories', keystone.list('Category').model.find());
+
 	// Render the view
 	view.render('index');
 };

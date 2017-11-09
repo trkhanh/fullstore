@@ -6263,6 +6263,9 @@ button.close {
 .footer-grids ul li a:hover {
   color: #000; }
 
+.footer-grids h3 {
+  padding-left: 40px; }
+
 .copy-right {
   text-align: center;
   padding: 2em 0;
