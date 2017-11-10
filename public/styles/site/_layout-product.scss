@@ -1,4 +1,5 @@
 /*-- add-products --*/
+
 .w3ls-add-grids {
     background: url(../images/img1.jpg)no-repeat 0px 0px;
     background-size: cover;
@@ -54,7 +55,42 @@
 }
 /*-- //add-products --*/
 /*-- products-page --*/ 
-
+.product-row {
+    width: 100%;
+    height: 100%
+}
+.new-tag h6 { 
+    top: 3%;
+    left: 3%;
+    font-size: .8em;
+}
+.new-tag:before { 
+    border-top-width: 50px;
+    border-right-width: 50px; 
+}
+.new-tag:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 60px solid #0280e1;
+    border-right: 60px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+	-webkit-transition: .5s all;
+	-moz-transition: .5s all;
+	-o-transition: .5s all;
+	-ms-transition: .5s all;
+	transition: .5s all;
+}
+.new-tag h6 {
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    top: 1%;
+    left: 4%;
+    font-size: .9em;
+}
 .agile-products:hover .new-tag:before {
     border-top-color: #f44336;
 }
@@ -150,6 +186,10 @@
     color: #999;
     margin-right: 0.5em;
 }
+.w3ls-cart{
+    color:white;
+    border: 1px white solid;
+}
 .w3ls-cart.pw3ls-cart {
     position: absolute;
     width: 75%;
@@ -164,6 +204,7 @@
 }
 .w3ls-cart.pw3ls-cart  i.fa {
     margin-right: 5px;
+    
 }
 .agile-products:hover  .w3ls-cart.pw3ls-cart{
 	bottom: 35%;

@@ -22,7 +22,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Trang chủ', key: 'home', href: '/' },
 		{ label: 'Sản Phẩm', key: 'gallery', href: '/gallery' },
 		{ label: 'Liên hệ', key: 'contact', href: '/contact' },
-		{ label: 'Thông tin', key: 'contact', href: '/contact' },
+		{ label: 'Thông tin', key: 'infomation', href: '/' },
 	];
 	res.locals.user = req.user;
 	next();

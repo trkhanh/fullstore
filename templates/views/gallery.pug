@@ -1,21 +1,347 @@
 extends ../layouts/_product
 	
 block products
-	.container
-		if galleries.length
-			each gallery in galleries
-				h2= gallery.name
-					if gallery.publishedDate
-						.pull-right.text-muted= gallery._.publishedDate.format('Do MMM YYYY')
-				
-				.row.gallery-images
-					if gallery.heroImage.exists
-						.col-sm-4.col-md-4.gallery-image: img(src=gallery._.heroImage.limit(680,680)).img-rounded
-						.col-sm-8.col-md-8: .row
-							each image in gallery.images
-								.col-xs-4.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
-					else
-						each image in gallery.images
-							.col-xs-6.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
-		else
-			h3.text-muted There are no image galleries yet.
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 20%
+					br
+					| Off
+			a(href='single.html')
+				img.img-responsive(src='images/e1.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Audio speaker
+				h6
+					del $200
+					|  $100
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Audio speaker')
+					input(type='hidden', name='amount', value='100.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e2.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Refrigerator
+				h6
+					del $700
+					|  $300
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Refrigerator')
+					input(type='hidden', name='amount', value='300.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 5% 
+					br
+					|  Off
+			a(href='single.html')
+				img.img-responsive(src='images/e3.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Smart Phone
+				h6
+					del $100
+					|  $70
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Smart Phone')
+					input(type='hidden', name='amount', value='70.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e4.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Digital Camera
+				h6
+					del $100
+					|  $80
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Digital Camera')
+					input(type='hidden', name='amount', value='80.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e4.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Digital Camera
+				h6
+					del $100
+					|  $80
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Digital Camera')
+					input(type='hidden', name='amount', value='80.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 5% 
+					br
+					|  Off
+			a(href='single.html')
+				img.img-responsive(src='images/e3.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Smart Phone
+				h6
+					del $100
+					|  $70
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Smart Phone')
+					input(type='hidden', name='amount', value='70.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 20%
+					br
+					| Off
+			a(href='single.html')
+				img.img-responsive(src='images/e1.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Audio speaker
+				h6
+					del $200
+					|  $100
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Audio speaker')
+					input(type='hidden', name='amount', value='100.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e2.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Refrigerator
+				h6
+					del $700
+					|  $300
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Refrigerator')
+					input(type='hidden', name='amount', value='300.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 20%
+					br
+					| Off
+			a(href='single.html')
+				img.img-responsive(src='images/e1.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Audio speaker
+				h6
+					del $200
+					|  $100
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Audio speaker')
+					input(type='hidden', name='amount', value='100.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e2.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Refrigerator
+				h6
+					del $700
+					|  $300
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Refrigerator')
+					input(type='hidden', name='amount', value='300.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 5% 
+					br
+					|  Off
+			a(href='single.html')
+				img.img-responsive(src='images/e3.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Smart Phone
+				h6
+					del $100
+					|  $70
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Smart Phone')
+					input(type='hidden', name='amount', value='70.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e4.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Digital Camera
+				h6
+					del $100
+					|  $80
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Digital Camera')
+					input(type='hidden', name='amount', value='80.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e4.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Digital Camera
+				h6
+					del $100
+					|  $80
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Digital Camera')
+					input(type='hidden', name='amount', value='80.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 5% 
+					br
+					|  Off
+			a(href='single.html')
+				img.img-responsive(src='images/e3.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Smart Phone
+				h6
+					del $100
+					|  $70
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Smart Phone')
+					input(type='hidden', name='amount', value='70.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6
+					| 20%
+					br
+					| Off
+			a(href='single.html')
+				img.img-responsive(src='images/e1.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Audio speaker
+				h6
+					del $200
+					|  $100
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Audio speaker')
+					input(type='hidden', name='amount', value='100.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart
+	.col-md-3.product-grids
+		.agile-products
+			.new-tag
+				h6 New
+			a(href='single.html')
+				img.img-responsive(src='images/e2.png', alt='img')
+			.agile-product-text
+				h5
+					a(href='single.html') Refrigerator
+				h6
+					del $700
+					|  $300
+				form(action='#', method='post')
+					input(type='hidden', name='cmd', value='_cart')
+					input(type='hidden', name='add', value='1')
+					input(type='hidden', name='w3ls_item', value='Refrigerator')
+					input(type='hidden', name='amount', value='300.00')
+					button.w3ls-cart.pw3ls-cart(type='submit')
+						i.fa.fa-cart-plus(aria-hidden='true')
+						|  Add to cart

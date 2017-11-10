@@ -1,23 +1,184 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		img(src='/images/logo.svg', width='160')
-		h1 Welcome
-		p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		hr
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>user@keystonejs.com</strong> and the password <strong>admin</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
-		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+	.container-fluid
+		//-- //-header
+		//- banner
+		.banner
+			#kb.carousel.kb_elastic.animate_text.kb_wrapper(data-ride='carousel', data-interval='6000', data-pause='hover')
+				//- Wrapper-for-Slides
+				.carousel-inner(role='listbox')
+					.item.active
+						//- First-Slide
+						img.img-responsive(src='images/5.jpg', alt='')
+						.carousel-caption.kb_caption.kb_caption_right
+							h3(data-animation='animated flipInX')
+								| Flat 
+								span 50%
+								|  Discount
+							h4(data-animation='animated flipInX') Hot Offer Today Only
+					.item
+						//- Second-Slide
+						img.img-responsive(src='images/8.jpg', alt='')
+						.carousel-caption.kb_caption.kb_caption_right
+							h3(data-animation='animated fadeInDown') Our Latest Fashion Editorials
+							h4(data-animation='animated fadeInUp') cupidatat non proident
+					.item
+						//- Third-Slide
+						img.img-responsive(src='images/3.jpg', alt='')
+						.carousel-caption.kb_caption.kb_caption_center
+							h3(data-animation='animated fadeInLeft') End Of Season Sale
+							h4(data-animation='animated flipInX') cupidatat non proident
+				//- Left-Button
+				a.left.carousel-control.kb_control_left(href='#kb', role='button', data-slide='prev')
+					span.fa.fa-angle-left.kb_icons(aria-hidden='true')
+					span.sr-only Previous
+				//- Right-Button
+				a.right.carousel-control.kb_control_right(href='#kb', role='button', data-slide='next')
+					span.fa.fa-angle-right.kb_icons(aria-hidden='true')
+					span.sr-only Next
+			script(src='js/custom.js')
+		//- //-banner
+		//- welcome
+		.welcome
+			.container
+				.welcome-info
+					.bs-example.bs-example-tabs(role='tabpanel', data-example-id='togglable-tabs')
+						ul#myTab.nav-tabs(role='tablist')
+							li.active(role='presentation')
+								a#home-tab(href='#home', role='tab', data-toggle='tab')
+									i.fa.fa-laptop(aria-hidden='true')
+									h5 Electronics
+							li(role='presentation')
+								a#carl-tab(href='#carl', role='tab', data-toggle='tab')
+									i.fa.fa-female(aria-hidden='true')
+									h5 Fashion
+							li(role='presentation')
+								a#james-tab(href='#james', role='tab', data-toggle='tab')
+									i.fa.fa-gift(aria-hidden='true')
+									h5 Photo & Gifts
+							li(role='presentation')
+								a#decor-tab(href='#decor', role='tab', data-toggle='tab')
+									i.fa.fa-home(aria-hidden='true')
+									h5 Home Decor
+							li(role='presentation')
+								a#sports-tab(href='#sports', role='tab', data-toggle='tab')
+									i.fa.fa-motorcycle(aria-hidden='true')
+									h5 Sports
+						.clearfix  
+		//- add-products
+		.add-products
+			.container
+				.add-products-row
+					.w3ls-add-grids
+						a(href='products1.html')
+							h4
+								| TOP 10 TRENDS FOR YOU FLAT 
+								span 20%
+								|  OFF
+							h6
+								| Shop now 
+								i.fa.fa-arrow-circle-right(aria-hidden='true')
+					.w3ls-add-grids.w3ls-add-grids-mdl
+						a(href='products1.html')
+							h4
+								| SUNDAY SPECIAL DISCOUNT FLAT 
+								span 40%
+								|  OFF
+							h6
+								| Shop now 
+								i.fa.fa-arrow-circle-right(aria-hidden='true')
+					.w3ls-add-grids.w3ls-add-grids-mdl1
+						a(href='products.html')
+							h4
+								| LATEST DESIGNS FOR YOU 
+								span  Hurry !
+							h6
+								| Shop now 
+								i.fa.fa-arrow-circle-right(aria-hidden='true')
+					.clerfix  
+		//- //-add-products
+		//- coming soon
+		.soon
+			.container
+				h3 Mega Deal Of the Week
+				h4 Coming Soon Don't Miss Out
+				#countdown1.ClassyCountdownDemo
+		//- //-coming soon
+		//- deals
+		.deals
+			.container
+				h3.w3ls-title DEALS OF THE DAY 
+				.deals-row
+					.col-md-3.focus-grid
+						a.wthree-btn(href='products.html')
+							.focus-image
+								i.fa.fa-mobile
+							h4.clrchg Mobiles
+					.col-md-3.focus-grid
+						a.wthree-btn.wthree1(href='products.html')
+							.focus-image
+								i.fa.fa-laptop
+							h4.clrchg  Electronics & Appliances
+					.col-md-3.focus-grid
+						a.wthree-btn.wthree2(href='products4.html')
+							.focus-image
+								i.fa.fa-wheelchair
+							h4.clrchg Furnitures
+					.col-md-3.focus-grid
+						a.wthree-btn.wthree3(href='products3.html')
+							.focus-image
+								i.fa.fa-home
+							h4.clrchg Home Decor
+					.col-md-2.focus-grid.w3focus-grid-mdl
+						a.wthree-btn.wthree3(href='products9.html')
+							.focus-image
+								i.fa.fa-book
+							h4.clrchg Books & Music
+					.col-md-2.focus-grid.w3focus-grid-mdl
+						a.wthree-btn.wthree4(href='products1.html')
+							.focus-image
+								i.fa.fa-asterisk
+							h4.clrchg Fashion
+					.col-md-2.focus-grid.w3focus-grid-mdl
+						a.wthree-btn.wthree2(href='products2.html')
+							.focus-image
+								i.fa.fa-gamepad
+							h4.clrchg Kids
+					.col-md-2.focus-grid.w3focus-grid-mdl
+						a.wthree-btn.wthree(href='products5.html')
+							.focus-image
+								i.fa.fa-shopping-basket
+							h4.clrchg Groceries
+					.col-md-2.focus-grid.w3focus-grid-mdl
+						a.wthree-btn.wthree5(href='products7.html')
+							.focus-image
+								i.fa.fa-medkit
+							h4.clrchg Health
+					.col-md-2.focus-grid.w3focus-grid-mdl
+						a.wthree-btn.wthree1(href='products8.html')
+							.focus-image
+								i.fa.fa-car
+							h4.clrchg Automotive
+					.col-md-3.focus-grid
+						a.wthree-btn.wthree2(href='products5.html')
+							.focus-image
+								i.fa.fa-cutlery
+							h4.clrchg Food
+					.col-md-3.focus-grid
+						a.wthree-btn.wthree5(href='products4.html')
+							.focus-image
+								i.fa.fa-futbol-o
+							h4.clrchg Sports
+					.col-md-3.focus-grid
+						a.wthree-btn.wthree3(href='products2.html')
+							.focus-image
+								i.fa.fa-gamepad
+							h4.clrchg Games & Toys
+					.col-md-3.focus-grid
+						a.wthree-btn(href='products6.html')
+							.focus-image
+								i.fa.fa-gift
+							h4.clrchg Gifts
+					.clearfix  
+		//- //-deals
