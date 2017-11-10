@@ -20,9 +20,9 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Trang chủ', key: 'home', href: '/' },
-		{ label: 'Thư viện', key: 'gallery', href: '/gallery' },
+		{ label: 'Sản Phẩm', key: 'gallery', href: '/gallery' },
 		{ label: 'Liên hệ', key: 'contact', href: '/contact' },
-		{ label: 'Sản Phẩm', key: 'products', href: '/products' },
+		{ label: 'Thông tin', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
 	next();

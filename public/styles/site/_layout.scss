@@ -30,7 +30,8 @@
 	margin-left: 20px;
 }
 .head-right li a{
-	color: #f9f9f9;
+    color: #f9f9f9;
+    text-decoration: none;
 }
 .dropdown-menu li a{
 	color: #464646;
@@ -175,7 +176,8 @@
 }
 
 .header-three{
-    border-bottom: #eaeaea 1px solid;
+    border-bottom: 2px solid #e2e2e2;
+    margin-bottom: 15px;
 }
 
 //Footer 1
@@ -480,6 +482,11 @@
     background-size: cover;
 }
 //nav list in navigation
+
+.hotline span{
+    font-size: 2em;
+    color:#f55009;
+}
 .nav-list{
     margin-right: 90px;
 }

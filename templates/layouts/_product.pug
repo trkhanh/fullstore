@@ -1,0 +1,182 @@
+extends ../layouts/default
+
+block content
+	.products
+		.container
+			.col-md-9.product-w3ls-right
+				//- breadcrumbs
+				ol.breadcrumb.breadcrumb1
+					li
+						a(href='/') Trang chủ
+					li.active Sản phẩm
+				  
+				//-breadcrumbs
+				.product-top
+					h4 Mặt hàng điện tử
+					ul
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='#', data-toggle='dropdown')
+								| Bộ lọc 
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='#') Low price
+								li
+									a(href='#') High price
+								li
+									a(href='#') Latest
+								li
+									a(href='#') Popular
+						li.dropdown.head-dpdn
+							a.dropdown-toggle(href='#', data-toggle='dropdown')
+								| Thương hiệu
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='#') Samsung
+								li
+									a(href='#') LG
+								li
+									a(href='#') Sony
+								li
+									a(href='#') Other
+					  
+				.products-row
+					block products
+				//- add-products
+				.w3ls-add-grids.w3agile-add-products
+					a(href='#')
+						h4
+							| CÁC MẶT HÀNG MỚI NHẤT GIẢM NGAY 
+							span 20%
+						h6
+							| Mua liền  
+							i.fa.fa-arrow-circle-right(aria-hidden='true')
+				//-add-products
+			.col-md-3.rsidebar
+				.rsidebar-top.visible-lg-block.hidden-sm
+					.sidebar-row
+						h4 LỌC THEO GIÁ 
+						.row.row1
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 0 - $100
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| $100 - $200
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| $200 - $250
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| $250 - $300
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| $350 - $400
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| $450 - $500
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| More
+					.sidebar-row
+						h4 KHUYẾN MÃI
+						.row.row1
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| Upto - 10% (20)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 70% - 60% (5)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 50% - 40% (7)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 30% - 20% (2)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 10% - 5% (5)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 30% - 20% (7)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| 10% - 5% (2)
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| Other(50)
+					.sidebar-row
+						h4 LỌC THEO MÀU
+						.row.row1.scroll-pane
+							label.checkbox
+								input(type='checkbox', name='checkbox', checked='')
+								i
+								| White
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| Pink
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| Gold
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| Blue
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								| Orange
+							label.checkbox
+								input(type='checkbox', name='checkbox')
+								i
+								|  Brown
+				.related-row
+					h4 SẢN PHẨM TƯƠNG TỰ
+					ul
+						li
+							a(href='products.html') Air conditioner 
+						li
+							a(href='products.html') Gaming
+						li
+							a(href='products.html') Monitors
+						li
+							a(href='products.html') Pc 
+						li
+							a(href='products.html') Food Processors
+						li
+							a(href='products.html') Oven
+						li
+							a(href='products.html') Purifiers
+						li
+							a(href='products.html') Oven
+						li
+							a(href='products.html') Cleaners
+						li
+							a(href='products.html') Small devices
+				.related-row
+					h4 BẠN CÓ THỂ THÍCH
+					.galry-like
+						a(href='single.html')
+							img.img-responsive(src='images/e1.png', alt='img')
+						h4
+							a(href='products.html') Audio speaker
+						h5 $100
+	//-products	

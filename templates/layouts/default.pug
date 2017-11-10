@@ -129,6 +129,7 @@ html
 							.clearfix  
 						.clearfix  
 			
+			//- Header 3
 			.row.header-three
 				div(role="navigation").navbar.navbar-default
 					.container
@@ -156,7 +157,9 @@ html
 								each link in navLinks
 									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 							ul.nav.navbar-nav.navbar-right
-								
+								li
+									a.hotline Hotline: 
+										span 1900-6035
 
 		//- BODY
 		#body
